@@ -16,6 +16,7 @@ RUN chmod +x -R /usr/share/docker-entrypoint.pre
 # install extra nginx
 RUN apt-get update && apt-get install -y \
         apache2-utils \
+        git \
         nginx-extras \
     && rm -rf /var/lib/apt/lists/* 
 
@@ -27,6 +28,11 @@ COPY ./src/cmd/addauth.sh /usr/bin/addauth
 COPY ./src/cmd/rmauth.sh /usr/bin/rmauth
 RUN chmod +x /usr/bin/addauth
 RUN chmod +x /usr/bin/rmauth
+
+# add theme
+RUN mkdir /theme
+WORKDIR /theme
+RUN git clone https://github.com/TheInsomniac/Nginx-Fancyindex-Theme.git
 
 RUN mkdir /share
 VOLUME /share

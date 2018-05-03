@@ -33,6 +33,7 @@ RUN chmod +x /usr/bin/rmauth
 RUN mkdir /theme
 WORKDIR /theme
 RUN git clone https://github.com/fraoustin/Nginx-Fancyindex-Theme.git
+ENV COLOR "blue" 
 
 RUN mkdir /share
 VOLUME /share

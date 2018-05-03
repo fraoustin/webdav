@@ -4,7 +4,7 @@ generate a nginx server webdav
 
 You can use client
 
-- ihm on http://127.0.0.1/
+- ihm on http://127.0.0.1/ (fraoustin/Nginx-Fancyindex-Theme)
 - windows : winscp https://sourceforge.net/projects/winscp/
 - android : in play store you can find apps (WebDAV Navigator Lite, ...)
 - linux : by nautilus (davfs://127.0.0.1/) or by davfs2 
@@ -26,6 +26,7 @@ load when start image load file in
 - CONTAINER_TIMEZONE timezone of container
 - DAVUSER (default user)
 - DAVPASSWORD (default pass)
+- COLOR (default blue) for web ihm (blue, green, grey, greydark, orange, purple, red)
 
 ## Volume
 

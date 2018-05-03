@@ -32,7 +32,8 @@ RUN chmod +x /usr/bin/rmauth
 # add theme
 RUN mkdir /theme
 WORKDIR /theme
-RUN git clone https://github.com/TheInsomniac/Nginx-Fancyindex-Theme.git
+RUN git clone https://github.com/fraoustin/Nginx-Fancyindex-Theme.git
+ENV COLOR "blue" 
 
 RUN mkdir /share
 VOLUME /share
@@ -44,6 +45,3 @@ EXPOSE 80
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["app"]
-
-#docker build  --build-arg http_proxy=http://faoustin:sibylle@proxy.sodebo.fr:8080 -t test .
-#docker run -d -v C:/Users/faoustin:/share -e "DAVUSER=user" -e "DAVPASSWORD=pass" --name test -p 80:80 test

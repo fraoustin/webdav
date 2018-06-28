@@ -4,6 +4,9 @@ LABEL maintainer "fraoustin@gmail.com"
 ENV SET_CONTAINER_TIMEZONE false 
 ENV CONTAINER_TIMEZONE "" 
 
+# manage user www-data
+RUN usermod -u 1000 www-data
+
 # manage start container
 COPY ./src/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
@@ -33,6 +36,7 @@ RUN chmod +x /usr/bin/rmauth
 RUN mkdir /theme
 WORKDIR /theme
 RUN git clone https://github.com/fraoustin/Nginx-Fancyindex-Theme.git
+COPY ./src/ihm/* /theme/Nginx-Fancyindex-Theme/
 ENV COLOR "blue" 
 
 RUN mkdir /share

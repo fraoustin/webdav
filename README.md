@@ -10,6 +10,7 @@ You can use client
 - linux : by nautilus (davfs://127.0.0.1/) or by davfs2 
 
     apt-get install davfs2
+
     mount.davfs http://127.0.0.1 /media/mywebdav
 
 You can read https://doc.ubuntu-fr.org/davfs2
@@ -69,10 +70,16 @@ File 00_init.sh
 
 build image mywebdav
 
-    docker build -t mywebdavmygit .
+    docker build -t mywebdav .
 
-run image mygit
+run image mywebdav
 
     docker run -d -e "CONTAINER_TIMEZONE=Europe/Paris" -e DAVUSER=myuser" -e "DAVPASSWORD=mypassword" -v <localpath>:/var/lib/git --name test -p 80:80 mywebdav
+
+## External library
+
+- mdl on https://getmdl.io/
+- Nginx-Fancyindex-Theme on https://github.com/fraoustin/Nginx-Fancyindex-Theme
+- wedav.js on https://github.com/aslakhellesoy/webdavjs
 
 

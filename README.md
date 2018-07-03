@@ -74,7 +74,7 @@ build image mywebdav
 
 run image mywebdav
 
-    docker run -d -e "CONTAINER_TIMEZONE=Europe/Paris" -e DAVUSER=myuser" -e "DAVPASSWORD=mypassword" -v <localpath>:/var/lib/git --name test -p 80:80 mywebdav
+    docker run -d -e "CONTAINER_TIMEZONE=Europe/Paris" -e DAVUSER=myuser" -e "DAVPASSWORD=mypassword" -v <localpath>:/share --name test -p 80:80 mywebdav
 
 ## External library
 

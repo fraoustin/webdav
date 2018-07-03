@@ -11,11 +11,7 @@ fi
 
 if [ "$1" = 'app' ]; then
     /bin/run-parts --verbose --regex '\.(sh)$' "/usr/share/docker-entrypoint.pre"
-    if [ ! -d /share/fancyindex ]; then
-        echo "add Nginx-Fancyindex-Theme in share"
-        cp -r /theme/Nginx-Fancyindex-Theme /share/fancyindex
-    fi
-    cp /share/fancyindex/mdl/color/$COLOR.min.css /share/fancyindex/mdl/material.min.css
+    cp /theme/Nginx-Fancyindex-Theme/mdl/color/$COLOR.min.css /theme/Nginx-Fancyindex-Theme/mdl/material.min.css
     nginx -g "daemon off;"
     /bin/run-parts --verbose --regex '\.(sh)$' "/usr/share/docker-entrypoint.post"
 fi

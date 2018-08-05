@@ -143,7 +143,9 @@ var templateDialog=`
         </div>
         <div class="full space"></div>
         <div>
+            <button type="button" class="mdl-button copyurl full mdl-button--primary"> <i class="material-icons">link</i>Copy URL</button>
             <button type="button" class="mdl-button delete full mdl-button--accent"> <i class="material-icons">delete</i>Delete</button>
+            <input id="copyfrom" style="width: 1px; border: 0; opacity: 0; cursor:default" readonly>
         </div>
     </div>`
 
@@ -190,6 +192,11 @@ function clickGetInfo(id) {
     dialog.querySelector('.close').addEventListener('click', function() {
         dialog.close();
       });
+    dialog.querySelector('.copyurl').addEventListener('click', function() {
+        clickCopyURL();
+      });
+
+
       dialog.querySelector('.delete').addEventListener('click', function() {
         var fs = new WebDAV.Fs(window.location.protocol + "//" + window.location.hostname);
         if (isDir) {
@@ -199,7 +206,7 @@ function clickGetInfo(id) {
             console.log("delete file");
             var elt = fs.file(currentPath + lib);   
         }
-        // delete dir does not work
+        // delete 
         elt.rm();
         dialog.close();
         location.reload(); 

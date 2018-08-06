@@ -3,6 +3,23 @@ while (templateDialogActions.firstChild) {
     templateDialogActions.removeChild(templateDialogActions.firstChild);
 }
 
+// fct copy
+function clickCopyURL() {
+    var url = window.location.href
+    url = url.substr(0, url.lastIndexOf("/") + 1);
+    var nodes = document.querySelector('#templateDialog div li span').childNodes;
+    var str = url + encodeURI(nodes[nodes.length - 2].nodeValue.trim());
+    copy(str);
+}
+
+function copy(str) {
+    var textArea = document.getElementById('copyfrom');
+    textArea.value = str;
+    textArea.select();
+    document.execCommand('copy');
+    textArea.value = '';
+}
+
 // manage for add dir and upload
 
 var templateButtonCreateFolder=`    
